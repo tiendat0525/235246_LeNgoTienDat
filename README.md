@@ -248,3 +248,51 @@ vào Atlas IP Access List:
 Đã kiểm tra frontend gọi backend trên Render;
 thêm thiết bị, cập nhật tình trạng và đối chiếu dữ liệu
 trong MongoDB Atlas, sau đó xóa thiết bị thử nghiệm.
+
+## Thông tin nộp bài
+
+| Trường | Nội dung |
+|---|---|
+| Link_GitHub | https://github.com/tiendat0525/235246_LeNgoTienDat |
+| Link_Docker_Backend | https://hub.docker.com/r/tiendat0525/backend |
+| Link_Docker_Frontend | https://hub.docker.com/r/tiendat0525/frontend |
+| Link_Render_App | https://web-235246.onrender.com |
+| Link_Render_API | https://api-235246.onrender.com |
+| Link_Data_MongoDB | MongoDB Atlas, Project 0, Cluster0, database 235246_LeNgoTienDat, collection devices |
+
+### Phiên bản triển khai
+
+- Backend trên Render: tiendat0525/backend:1.0.
+- Frontend trên Render: tiendat0525/frontend:1.1.
+
+### Kết quả kiểm tra tổng thể
+
+- Frontend và backend hoạt động trên Render.
+- Backend kết nối MongoDB Atlas.
+- Đã kiểm tra danh sách, chi tiết và tìm kiếm thiết bị.
+- Đã thêm thiết bị, cập nhật tình trạng và đối chiếu trong Atlas.
+- Đã xóa thiết bị thử nghiệm, giữ lại 3 thiết bị mẫu.
+- Thông tin xác thực được cấu hình qua biến môi trường.
+
+## Thông tin nộp bài
+
+| Trường | Nội dung |
+|---|---|
+| Link_GitHub | https://github.com/tiendat0525/235246_LeNgoTienDat |
+| Link_Docker_Backend | https://hub.docker.com/r/tiendat0525/backend |
+| Link_Docker_Frontend | https://hub.docker.com/r/tiendat0525/frontend |
+| Link_Render_App | https://web-235246.onrender.com |
+| Link_Render_API | https://api-235246.onrender.com/api/devices |
+| Link_Data_MongoDB | Atlas: Project 0 → Cluster0 → database 235246_LeNgoTienDat → collection devices |
+
+Backend base URL: https://api-235246.onrender.com
+
+Health check: https://api-235246.onrender.com/health
+
+Phiên bản triển khai:
+- Backend: tiendat0525/backend:1.0.
+- Frontend: tiendat0525/frontend:1.1.
+
+Đã kiểm tra danh sách, chi tiết, tìm kiếm, thêm,
+cập nhật tình trạng và xóa thiết bị trên Render.
+Đã đối chiếu dữ liệu cập nhật trong MongoDB Atlas.
