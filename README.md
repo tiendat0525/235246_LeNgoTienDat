@@ -183,3 +183,24 @@ Truy cập giao diện tại http://localhost:5173.
 ```powershell
 docker push tiendat0525/frontend:1.0
 ```
+
+## Triển khai frontend trên Render
+
+- Service: web-235246.
+- Region: Singapore.
+- Gói: Free.
+- Docker image: tiendat0525/frontend:1.1.
+- URL: https://web-235246.onrender.com
+
+Frontend được build với địa chỉ backend công khai:
+
+```powershell
+docker build --build-arg VITE_API_URL=https://api-235246.onrender.com -t tiendat0525/frontend:1.1 ./frontend
+docker push tiendat0525/frontend:1.1
+```
+
+Trên Render, tạo Web Service từ Existing Image,
+sử dụng docker.io/tiendat0525/frontend:1.1.
+
+Đã kiểm tra danh sách, tìm kiếm, xem chi tiết,
+thêm, cập nhật và xóa thiết bị trên giao diện cloud.
