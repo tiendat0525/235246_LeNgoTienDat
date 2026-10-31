@@ -204,3 +204,47 @@ sử dụng docker.io/tiendat0525/frontend:1.1.
 
 Đã kiểm tra danh sách, tìm kiếm, xem chi tiết,
 thêm, cập nhật và xóa thiết bị trên giao diện cloud.
+
+## Triển khai backend API trên Render
+
+- Service: api-235246.
+- Region: Singapore.
+- Gói: Free.
+- Docker image: tiendat0525/backend:1.0.
+- URL: https://api-235246.onrender.com
+- Health Check Path: /health.
+
+### Biến môi trường
+
+- MONGODB_URI: cấu hình bí mật trên Render, kết nối
+  database 235246_LeNgoTienDat.
+- PORT: 5000.
+- NODE_ENV: production.
+- CLIENT_URL: https://web-235246.onrender.com.
+
+Không lưu giá trị MONGODB_URI chứa mật khẩu trong tài liệu
+hoặc mã nguồn công khai.
+
+### Quyền truy cập MongoDB Atlas
+
+Đã thêm các dải IP outbound của Render Singapore
+vào Atlas IP Access List:
+
+- 74.220.52.0/24.
+- 74.220.60.0/24.
+
+### API công khai
+
+- GET /health.
+- GET /api/devices.
+- GET /api/devices?search=TB002.
+- GET /api/devices/:id.
+- POST /api/devices.
+- PUT /api/devices/:id.
+- DELETE /api/devices/:id.
+
+### Kiểm thử
+
+Đã kiểm tra frontend gọi backend trên Render;
+thêm thiết bị, cập nhật tình trạng và đối chiếu dữ liệu
+trong MongoDB Atlas, sau đó xóa thiết bị thử nghiệm.
