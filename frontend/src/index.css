@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+}
+
+main {
+  max-width: 1280px;
+  margin: 32px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 10px;
+}
+
+h1,
+h2 {
+  color: #164e63;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #9ca3af;
+  border-radius: 5px;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #0369a1;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover:not(:disabled) {
+  background: #075985;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+button.secondary {
+  background: #475569;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #334155;
+}
+
+button.danger {
+  background: #b91c1c;
+}
+
+button.danger:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #e0f2fe;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+section {
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.device-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.device-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: bold;
+}
+
+.device-form input,
+.device-form select,
+.device-form textarea {
+  width: 100%;
+  min-width: 0;
+  font-weight: normal;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.error {
+  color: #b91c1c;
+  overflow-wrap: anywhere;
+}
+
+.success {
+  color: #166534;
+}
+
+dt {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 12px;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .search-form input {
+    min-width: 0;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .device-form fieldset {
+    grid-template-columns: 1fr;
+  }
+}
