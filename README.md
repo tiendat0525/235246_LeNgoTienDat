@@ -89,3 +89,57 @@ chỉ định database 235246_LeNgoTienDat.
 File .env được Git bỏ qua, không đưa thông tin xác thực
 lên repository. Kết nối thực tế sẽ được kiểm tra khi
 xây dựng backend.
+
+## Chạy backend bằng Docker
+
+Docker image: tiendat0525/backend:1.0
+
+Docker Hub: https://hub.docker.com/r/tiendat0525/backend
+
+### Chuẩn bị cấu hình
+
+Tạo backend/.env theo backend/.env.example.
+Điền PORT=5000 và MONGODB_URI kết nối database
+235246_LeNgoTienDat trên MongoDB Atlas.
+
+Không đưa file .env lên GitHub hoặc nhúng vào Docker image.
+
+### Build image
+
+Chạy từ thư mục gốc dự án:
+
+```powershell
+docker build -t tiendat0525/backend:1.0 ./backend
+```
+
+### Chạy container
+
+Đảm bảo cổng 5000 chưa được ứng dụng khác sử dụng:
+
+```powershell
+docker run -d --name devices-backend -p 5000:5000 --env-file ./backend/.env tiendat0525/backend:1.0
+```
+
+Nếu container devices-backend đã tồn tại nhưng đang dừng:
+
+```powershell
+docker start devices-backend
+```
+
+### Kiểm tra
+
+- http://localhost:5000/health
+- http://localhost:5000/api/devices
+
+Xem log:
+
+```powershell
+docker logs devices-backend
+```
+
+### Đẩy image lên Docker Hub
+
+```powershell
+docker login
+docker push tiendat0525/backend:1.0
+```
