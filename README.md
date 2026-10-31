@@ -143,3 +143,43 @@ docker logs devices-backend
 docker login
 docker push tiendat0525/backend:1.0
 ```
+
+## Chạy frontend bằng Docker
+
+Docker image: tiendat0525/frontend:1.0
+
+Docker Hub: https://hub.docker.com/r/tiendat0525/frontend
+
+### Build image
+
+Chạy từ thư mục gốc dự án:
+
+```powershell
+docker build --build-arg VITE_API_URL=http://localhost:5000 -t tiendat0525/frontend:1.0 ./frontend
+```
+
+VITE_API_URL là địa chỉ backend được đưa vào frontend lúc build.
+Khi đổi địa chỉ backend, cần build lại image với giá trị mới.
+
+### Chạy container
+
+Đảm bảo backend đang chạy tại http://localhost:5000
+và cổng 5173 chưa bị ứng dụng khác sử dụng.
+
+```powershell
+docker run -d --name devices-frontend -p 5173:80 tiendat0525/frontend:1.0
+```
+
+Nếu container đã tồn tại nhưng đang dừng:
+
+```powershell
+docker start devices-frontend
+```
+
+Truy cập giao diện tại http://localhost:5173.
+
+### Đẩy image lên Docker Hub
+
+```powershell
+docker push tiendat0525/frontend:1.0
+```
