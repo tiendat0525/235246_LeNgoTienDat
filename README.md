@@ -62,3 +62,30 @@ File .env.example chỉ chứa cấu hình mẫu, không chứa bí mật.
 ## Triển khai
 
 Hướng dẫn Docker và URL Render sẽ được bổ sung ở các câu sau.
+
+## Cơ sở dữ liệu MongoDB Atlas
+
+- Database: 235246_LeNgoTienDat.
+- Collection: devices.
+- Đã thêm 3 bản ghi mẫu:
+  - TB001: Máy chiếu Epson EB-X06.
+  - TB002: Máy tính Dell OptiPlex 7010.
+  - TB003: Loa Yamaha DBR10.
+
+### Các trường dữ liệu
+
+deviceId, name, deviceType, room, brand, model,
+quantity, status, purchaseDate, description.
+
+Trạng thái thiết bị dự kiến hỗ trợ: Đang sử dụng,
+Hư hỏng, Đang sửa chữa, Ngừng sử dụng.
+
+### Cấu hình kết nối
+
+Tạo backend/.env theo mẫu backend/.env.example.
+Điền MONGODB_URI bằng chuỗi kết nối MongoDB Atlas,
+chỉ định database 235246_LeNgoTienDat.
+
+File .env được Git bỏ qua, không đưa thông tin xác thực
+lên repository. Kết nối thực tế sẽ được kiểm tra khi
+xây dựng backend.
